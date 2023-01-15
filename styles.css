@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/*
+
+## Colors
+
+### Primary
+
+- Dark cyan: hsl(158, 36%, 37%)
+- Cream: hsl(30, 38%, 92%)
+
+### Neutral
+
+- Very dark blue: hsl(212, 21%, 14%)
+- Dark grayish blue: hsl(228, 12%, 48%)
+- White: hsl(0, 0%, 100%) 
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button{
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  background-color:#F3EAE3;
+
+
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+/* utilities */
+.flex-group{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* product styles */
+.product {
+  --content-padding: 2rem;
+  --content-spacing: 1.5rem;
+
+  display: grid;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.product_content {
+  display: grid;
+  padding: var(--content-padding);
+  gap: var(--content-spacing);
+}
+
+.product_content p {
+  line-height: var(--content-spacing);
+}
+
+.product_category{
+  letter-spacing: 5px;
+  color: hsl(228, 12%, 48%);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.product_title{
+  font-size: 2rem;
+  color: hsl(212, 21%, 14%);
+}
+
+.product_price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: hsl(158, 36%, 37%);
+}
+
+.product_original-price{
+  color: hsl(228, 12%, 48%);
+}
+
+
+/* button */
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  
+  border: 0;
+  border-radius: 0.5rem;
+
+  gap: .5rem;
+  padding: .6em 1.5em;
+  background-color: hsl(158, 36%, 37%);
+  color: white;
+  font-weight: bold;
+  font-size: 0.925rem;
+}
+
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url("images/icon-cart.svg");
+}
+
+.button:is(:hover, :focus){
+  background-color: hsl(158, 54%, 14%);
+}
+
+@media (min-width: 600px){
+  .product {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product img{
+    height: 100%;
+    object-fit: cover;
+  }
+}
